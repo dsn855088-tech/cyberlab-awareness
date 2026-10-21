@@ -1,7 +1,7 @@
 services:
   - type: web
-    name: cyberlab-awareness-demo
+    name: cyberlab-awareness
     runtime: python
-    buildCommand: "echo No external dependencies"
+    buildCommand: "pip install -r requirements.txt"
     startCommand: "python app.py"
     plan: free
