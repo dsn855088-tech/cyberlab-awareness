@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: cyberlab-awareness-demo
+    runtime: python
+    buildCommand: "echo No external dependencies"
+    startCommand: "python app.py"
+    plan: free
