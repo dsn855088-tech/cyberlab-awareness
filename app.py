@@ -29,8 +29,11 @@ def respond(h, status, data, content_type="text/html; charset=utf-8", extra_head
     h.end_headers()
     h.wfile.write(data)
 
-def json_response(h, status, obj):
-    return respond(h, status, json.dumps(obj).encode("utf-8"), "application/json; charset=utf-8")
+def json_response(h, status, obj, extra_headers=None):
+    return respond(
+        h, status, json.dumps(obj).encode("utf-8"),
+        "application/json; charset=utf-8", extra_headers=extra_headers
+    )
 
 def read_json(h):
     length = int(h.headers.get("Content-Length", "0"))
